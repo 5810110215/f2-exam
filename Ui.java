@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
@@ -41,9 +42,10 @@ public class Ui {
     
 		button.setPreferredSize(new Dimension(100, 50));
         frame.add(button, BorderLayout.CENTER  );
-        JTextField textField1 = new JTextField("KEY");
+       
         frame.add(textField1, BorderLayout.PAGE_END);
-		
+        JLabel label = new JLabel();
+		label.setText("" + counter.getValue());
 		frame.setVisible(true);
 	}
 }

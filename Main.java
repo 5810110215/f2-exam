@@ -4,44 +4,78 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        
+        ArrayList<Shape2D> shape2ds = new ArrayList<Shape2D>();
+        ArrayList<Shape3D> shape3ds = new ArrayList<Shape3D>();
         try{
         Scanner num = new Scanner(new File("C:\\Users\\Lenovo\\Documents\\data.txt"));
-        while(num.hasNextLine()){
-            String line = "";
-            line = num.nextLine();
-            System.out.println(line);
-
-            if(line.contains("W")){
-                if(line.contains("H")){
-                    if(line.contains("D")){
-                        System.out.println("Cuboid");
+        while(sc.hasNextLine()){
+            String currentline = "";
+            double w = 0;
+            double r = 0;
+            double h = 0;
+            double d = 0;
+            int indexw=0;
+            int indexh;
+            int indexd;
+            int indexr;
+            
+            currentline = sc.nextLine();
+            System.out.println(currentline);
+            if(currentline.contains("W")){ 
+               indexw =  currentline.lastIndexOf("W"); 
+               w = Double.parseDouble(currentline.substring(indexw+1, indexw+3));
+                if(currentline.contains("H")){
+                   
+                    indexh =  currentline.lastIndexOf("H");
+                   // System.out.println(currentline.substring(indexw+1, indexw+3));
+                  
+                    h = Double.parseDouble(currentline.substring(indexh+1, indexh+3));
+                    if(currentline.contains("D")){
+                        
+                      
+                        indexd =  currentline.lastIndexOf("D");
+                        System.out.println(currentline.substring(indexd+1, indexd+2));
+                        
+                        d = Double.parseDouble(currentline.substring(indexd+1, indexw+3));
+                        shape3ds.add(new Cuboid(currentline.substring(0,1),w,h,d));
+                        System.out.println("cuboid w = "+ w +"h ="+ h + "d = "+ d);
                     }
                     else{
-                        System.out.println("Rectangle");
+                        w = Double.parseDouble(currentline.substring(indexw+1, indexw+3));
+                        h = Double.parseDouble(currentline.substring(indexh+1, indexh+3));
+                        shape2ds.add(new Rectangle(currentline.substring(0,1),w,h));
+                        System.out.println("rec w =" + w + "h = "+ h);
                     }
                 }
-
+                
             }
-            else if(line.contains("R")){
-               int key =  line.lastIndexOf("R");
-           
-               System.out.println(key);
-               if(key > 2){
-                   System.out.println("Sphere");
+            else if(currentline.contains("R")){
+               indexr =  currentline.lastIndexOf("R");
+               r = Double.parseDouble(currentline.substring(indexr+1, indexr+3));
+            
+               if(indexr > 2){
+                   System.out.println("Sphere r ="+ r);
+                   shape3ds.add(new Sphere(currentline.substring(0,1),r));
                }
-               else if(line.contains("H")){
-                   System.out.println("Cylinder");
+               else if(currentline.contains("H")){
+                indexh =  currentline.lastIndexOf("H");
+           
+                h = Double.parseDouble(currentline.substring(indexh+1, indexh+3));
+                   System.out.println("Cylinder h ="+ h + "r=" + r);
+                   shape3ds.add(new Cylinder(currentline.substring(0,1),r,h));
                 }
                 else{
-                   System.out.println("Circle");
+                   System.out.println("Circle r ="+ r);
+                   shape2ds.add(new Circle(currentline.substring(0,1),r));
                }
+            }
+            for(Shape2D s : shape2ds){
+                System.out.println(s.getName());
             }
 
 
-
+           
         }
-
         }catch(FileNotFoundException e){
             System.out.println("File Not Found");
         }
