@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Shape2d> shape2ds = new ArrayList<Shape2d>();
         ArrayList<Shape3d> shape3ds = new ArrayList<Shape3d>();
+        
         try{
         Scanner num = new Scanner(new File("C:\\Users\\Lenovo\\Documents\\data.txt"));
         while(num.hasNextLine()){
@@ -41,7 +42,7 @@ public class Main {
                         System.out.println("cuboid w = "+ W +"h ="+ H + "d = "+ D);
                     }
                     else{
-                        W = Double.parseDouble(line.substring(keyd+1, keyd+3));
+                        W = Double.parseDouble(line.substring(keyw+1, keyw+3));
                         H = Double.parseDouble(line.substring(keyh+1, keyh+3));
                         shape2ds.add(new Rectangle(line.substring(0,1),W,H));
                         System.out.println("rec w =" + W + "h = "+ H);
@@ -72,7 +73,9 @@ public class Main {
             for(Shape2d s : shape2ds){
                 System.out.println(s.getName());
             }
-
+            for(Shape3d y : shape3ds){
+                System.out.println(y.getName());
+            }
 
            
         }
