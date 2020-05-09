@@ -11,22 +11,23 @@ public class Main {
             String line = "";
             line = num.nextLine();
             System.out.println(line);
+            
             if(line.contains("W")){
                 if(line.contains("H")){
                     if(line.contains("D")){
-                        System.out.println("cuboid");
+                        System.out.println("Cuboid");
                     }
                     else{
-                        System.out.println("rec");
+                        System.out.println("Rectangle");
                     }
                 }
 
             }
             else if(line.contains("R")){
-               int index =  line.lastIndexOf("R");
-
-               System.out.println(index);
-               if(index > 2){
+               int key =  line.lastIndexOf("R");
+           
+               System.out.println(key);
+               if(key > 2){
                    System.out.println("Sphere");
                }
                else if(line.contains("H")){
