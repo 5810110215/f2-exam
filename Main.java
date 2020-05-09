@@ -11,7 +11,7 @@ public class Main {
             String line = "";
             line = num.nextLine();
             System.out.println(line);
-            
+
             if(line.contains("W")){
                 if(line.contains("H")){
                     if(line.contains("D")){
@@ -43,7 +43,7 @@ public class Main {
         }
 
         }catch(FileNotFoundException e){
-            System.out.println("File not Found");
+            System.out.println("File Not Found");
         }
     }
 }
