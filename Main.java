@@ -1,75 +1,75 @@
 import java.io.FileNotFoundException;
 import java.io.File;
 import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Shape2D> shape2ds = new ArrayList<Shape2D>();
-        ArrayList<Shape3D> shape3ds = new ArrayList<Shape3D>();
+        ArrayList<Shape2d> shape2ds = new ArrayList<Shape2d>();
+        ArrayList<Shape3d> shape3ds = new ArrayList<Shape3d>();
         try{
         Scanner num = new Scanner(new File("C:\\Users\\Lenovo\\Documents\\data.txt"));
-        while(sc.hasNextLine()){
-            String currentline = "";
-            double w = 0;
-            double r = 0;
-            double h = 0;
-            double d = 0;
-            int indexw=0;
-            int indexh;
-            int indexd;
-            int indexr;
+        while(num.hasNextLine()){
+            String line = "";
+            double W = 0;
+            double R = 0;
+            double H = 0;
+            double D = 0;
+            int keyw;
+            int keyh;
+            int keyd;
+            int keyr;
             
-            currentline = sc.nextLine();
-            System.out.println(currentline);
-            if(currentline.contains("W")){ 
-               indexw =  currentline.lastIndexOf("W"); 
-               w = Double.parseDouble(currentline.substring(indexw+1, indexw+3));
-                if(currentline.contains("H")){
+            line = num.nextLine();
+            System.out.println(line);
+
+            if(line.contains("W")){ 
+                keyw =  line.lastIndexOf("W"); 
+               W = Double.parseDouble(line.substring(keyw+1, keyw+3));
+                if(line.contains("H")){
                    
-                    indexh =  currentline.lastIndexOf("H");
-                   // System.out.println(currentline.substring(indexw+1, indexw+3));
+                    keyh =  line.lastIndexOf("H");
+                 
                   
-                    h = Double.parseDouble(currentline.substring(indexh+1, indexh+3));
-                    if(currentline.contains("D")){
+                    H = Double.parseDouble(line.substring(keyh+1, keyh+3));
+                    if(line.contains("D")){
                         
                       
-                        indexd =  currentline.lastIndexOf("D");
-                        System.out.println(currentline.substring(indexd+1, indexd+2));
+                        keyd = line.lastIndexOf("D");
+                        System.out.println(line.substring(keyd+1, keyd+2));
                         
-                        d = Double.parseDouble(currentline.substring(indexd+1, indexw+3));
-                        shape3ds.add(new Cuboid(currentline.substring(0,1),w,h,d));
-                        System.out.println("cuboid w = "+ w +"h ="+ h + "d = "+ d);
+                        D = Double.parseDouble(line.substring(keyd+1, keyd+3));
+                        shape3ds.add(new Cuboid(line.substring(0,1),W,H,D));
+                        System.out.println("cuboid w = "+ W +"h ="+ H + "d = "+ D);
                     }
                     else{
-                        w = Double.parseDouble(currentline.substring(indexw+1, indexw+3));
-                        h = Double.parseDouble(currentline.substring(indexh+1, indexh+3));
-                        shape2ds.add(new Rectangle(currentline.substring(0,1),w,h));
-                        System.out.println("rec w =" + w + "h = "+ h);
+                        W = Double.parseDouble(line.substring(keyd+1, keyd+3));
+                        H = Double.parseDouble(line.substring(keyh+1, keyh+3));
+                        shape2ds.add(new Rectangle(line.substring(0,1),W,H));
+                        System.out.println("rec w =" + W + "h = "+ H);
                     }
                 }
                 
             }
-            else if(currentline.contains("R")){
-               indexr =  currentline.lastIndexOf("R");
-               r = Double.parseDouble(currentline.substring(indexr+1, indexr+3));
+            else if(line.contains("R")){
+                keyr =  line.lastIndexOf("R");
+               R = Double.parseDouble(line.substring(keyr+1, keyr+3));
             
-               if(indexr > 2){
-                   System.out.println("Sphere r ="+ r);
-                   shape3ds.add(new Sphere(currentline.substring(0,1),r));
+               if(keyr > 2){
+                   System.out.println("Sphere r ="+ R);
+                   shape3ds.add(new Sphere(line.substring(0,1),R));
                }
-               else if(currentline.contains("H")){
-                indexh =  currentline.lastIndexOf("H");
+               else if(line.contains("H")){
+                keyr =  line.lastIndexOf("H");
            
-                h = Double.parseDouble(currentline.substring(indexh+1, indexh+3));
-                   System.out.println("Cylinder h ="+ h + "r=" + r);
-                   shape3ds.add(new Cylinder(currentline.substring(0,1),r,h));
+                H = Double.parseDouble(line.substring(keyr+1,keyr+3));
+                   System.out.println("Cylinder h ="+ H + "r=" + R);
+                   shape3ds.add(new Cylinder(line.substring(0,1),R,H));
                 }
                 else{
-                   System.out.println("Circle r ="+ r);
-                   shape2ds.add(new Circle(currentline.substring(0,1),r));
+                   System.out.println("Circle r ="+ R);
+                   shape2ds.add(new Circle(line.substring(0,1),R));
                }
             }
-            for(Shape2D s : shape2ds){
+            for(Shape2d s : shape2ds){
                 System.out.println(s.getName());
             }
 
