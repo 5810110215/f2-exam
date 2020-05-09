@@ -4,8 +4,4 @@ public abstract class Shape3d implements VolumeCalculable{
 		super(name);
 	}
 
-    ​double​ getVolume(); {
-
-        
-    }
 }

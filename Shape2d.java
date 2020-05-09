@@ -4,8 +4,5 @@ public abstract class Shape2d implements AreaCalculable{
 		super(name);
 	}
 
-	​double​ getVolume(); {
 
-        
-    }
 }

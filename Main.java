@@ -1,21 +1,18 @@
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.File;
+import java.util.*;
 
-public class Main {
-	
-	public static void main(String[] args){
-		//polymorhism
+public class Final {
+    public static void main(final String[] args) {
+ 
+        try{
+        Scanner sc = new Scanner(new File("C:\\Users\\Lenovo\\Documents\\data.txt"));
+           String currentline = sc.nextLine();
+           System.out.println(currentline);
 
-		ArrayList<Shape> shape = new ArrayList< Shape >();
-		
-	}
 
-	public static void Shape(ArrayList<Shape> shapes){
-		for(Shape s : Shapes){
-			if(){
-				Zoomable z = (Zoomable)s;
-				z.zoom(factor);
-			}
-		}
-
-	}
+        }catch(FileNotFoundException e){
+            System.out.println("File not Found");
+        }
+    }
 }
