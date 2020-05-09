@@ -1,9 +1,10 @@
 public abstract class Shape3d implements VolumeCalculable{
+	private String name;
+    public Shape3d(String name){
+        this.name = name;
+    }
 
-	public Shape3d(String name){
-		super();
-	}
-
-	public double getName(){
-	}
+    public String getName(){
+        return name;
+    }
 }
