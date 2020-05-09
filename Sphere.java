@@ -1,4 +1,4 @@
-public class Sphere extends Shape {	//concrete class
+public class Sphere extends Shape3d {	//concrete class
 	private double radius;
 
 	public Circle(String name, double radius){
@@ -15,15 +15,7 @@ public class Sphere extends Shape {	//concrete class
 	}
 
 	public double getArea(){
-		return Math.PI * radius * radius;
+		return 4/3*(Math.PI * radius * radius * radius);
 	}
-
-	public void zoom(double factor){
-		radius = radius * factor;
-	}
-
-	public static void main(String[] args){
-		Circle c = new Circle("C1", 2);
-		System.out.println("Area of " +  c.getName() + " is " + c.getArea());
-	}
+	
 }

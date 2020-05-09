@@ -27,10 +27,5 @@ public class Cylinder extends Shape {
             return Math.PI * radius * radius*heigth;
         }
     
-    
-        public static void main(String[] args){
-            Circle c = new Circle("C1", 2);
-            System.out.println("Area of " +  c.getName() + " is " + c.getArea());
-        }
+
     }
-}
