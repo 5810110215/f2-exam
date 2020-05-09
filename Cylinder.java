@@ -3,7 +3,7 @@ public class Cylinder extends Shape3 {
         private double radius;
         private double heigth;
     
-        public Circle(String name, double radius,double heigth){
+        public Cylinder(final String name, final double radius,final double heigth){
             super(name);
             this.radius = radius;
             this.heigth = heigth;
@@ -16,10 +16,10 @@ public class Cylinder extends Shape3 {
             return heigth;
         }
     
-        public void setRadius(double radius){
+        public void setRadius(final double radius){
             this.radius = radius;
         }
-        public void setHeigth(double heigth){
+        public void setHeigth(final double heigth){
             this.heigth = heigth;
         }
     

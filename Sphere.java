@@ -1,7 +1,7 @@
 public class Sphere extends Shape3d {	//concrete class
 	private double radius;
 
-	public Circle(String name, double radius){
+	public Sphere(String name, double radius){
 		super(name);
 		this.radius = radius;
 	}
@@ -16,6 +16,11 @@ public class Sphere extends Shape3d {	//concrete class
 
 	public double getArea(){
 		return 4/3*(Math.PI * radius * radius * radius);
+	}
+
+	@Override
+	public double getVolume() {
+		return 0;
 	}
 	
 }

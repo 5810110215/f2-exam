@@ -30,11 +30,16 @@ public class Cuboid extends Shape3d {	//concrete class
 		return length;
 	}
 
-	public void setlength(double height){
+	public void setlength(double length){
 		this.length = length;
 	}
 	public double getArea(){
 		return width * height*length;
+	}
+
+	@Override
+	public double getVolume() {
+		return 0;
 	}
 
 }

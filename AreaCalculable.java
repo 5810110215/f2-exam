@@ -1,5 +1,4 @@
-public​ ​interface​ AreaCalculable{     ​
+public interface AreaCalculable{
+    double getArea();
     
-    double​ getArea(); {}
-
-}   
+}
