@@ -4,5 +4,5 @@ public abstract class Shape implements AreaCalculable{
 		super(name);
 	}
 
-	public abstract double getArea();
+
 }

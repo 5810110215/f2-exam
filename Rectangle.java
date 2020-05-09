@@ -2,7 +2,7 @@ public class Rectangle extends Shape2d {	//concrete class
 	private double width;
 	private double height;
 
-	public Rectangle(String name, double width, double height){
+	public Rectangle(final String name, final double width, final double height){
 		super(name);
 		this.width = width;
 		this.height = height;
@@ -12,7 +12,7 @@ public class Rectangle extends Shape2d {	//concrete class
 		return width;
 	}
 
-	public void setWidth(double width){
+	public void setWidth(final double width){
 		this.width = width;
 	}
 
@@ -20,7 +20,7 @@ public class Rectangle extends Shape2d {	//concrete class
 		return height;
 	}
 
-	public void setHeight(double height){
+	public void setHeight(final double height){
 		this.height = height;
 	}
 

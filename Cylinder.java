@@ -1,9 +1,9 @@
-public class Cylinder extends Shape {
+public class Cylinder extends Shape3 {
 
         private double radius;
         private double heigth;
     
-        public Circle(String name, double radius){
+        public Circle(String name, double radius,double heigth){
             super(name);
             this.radius = radius;
             this.heigth = heigth;
